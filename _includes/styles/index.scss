@@ -1,0 +1,80 @@
+@import "./vars";
+@import "./typography";
+@import "./syntax";
+
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Work sans", sans-serif;
+  color: $color-text;
+  background: $color-bg;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  @media (min-width: 60em) {
+    border: solid 1rem $color-base;
+  }
+}
+
+.wrap {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: $spacing-5;
+  margin: 0 auto;
+  @media (min-width: 60em) {
+    margin: 0 auto 0 15vw;
+  }
+}
+
+a {
+  color: $color-primary;
+  &:hover, &:focus {
+    background: $color-base;
+  }
+  &:focus-visible {
+    outline: dashed 2px $color-primary;
+  }
+}
+
+main {
+  > * + * {
+    margin-top: $spacing-3;
+  }
+}
+
+header {
+  margin-bottom: $spacing-4;
+  margin-top: $spacing-5;
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+footer {
+  margin-top: $spacing-5;
+  padding-top: $spacing-5;
+  border-top: solid 1px $color-border;
+}
+
+.me {
+  padding-bottom: $spacing-5;
+  border-bottom: solid 1px $color-border;
+  font-size: 1.2rem;
+}
+
+.home-title {
+  font-size: 1rem;
+  margin-top: $spacing-5;
+  color: $color-text-light;
+}
+
+.postlist-item {
+  margin-top: $spacing-1;
+}
+
+.back-to-home {
+  margin-top: $spacing-5;
+}

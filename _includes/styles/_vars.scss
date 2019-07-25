@@ -1,0 +1,15 @@
+$spacing-base: 0.4em;
+$ratio: 1.5;
+
+$spacing-1: $spacing-base;
+$spacing-2: $spacing-base * $ratio;
+$spacing-3: $spacing-base * $ratio * $ratio;
+$spacing-4: $spacing-base * $ratio * $ratio * $ratio;
+$spacing-5: $spacing-base * $ratio * $ratio * $ratio * $ratio;
+
+$color-base: hsl(0, 0%, 100%);
+$color-bg: hsl(108, 45%, 98%);
+$color-primary: rgb(193, 77, 0);
+$color-border: hsl(152, 45%, 88%);
+$color-text: hsl(236, 42%, 25%);
+$color-text-light: hsl(245, 12%, 41%);

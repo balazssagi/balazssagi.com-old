@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if page.url == "/" %}
+      <title>Balázs Sági</title>
+          {% else %}
+      <title>{{ renderData.title or title or metadata.title }} – Balázs Sági</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>
+          {% if page.url == "/" %}
+            Balázs Sági
+          {% else %}
+            <a href="/">Balázs Sági</a>
+          {% endif %}
+        </h1>
+      </header>
+
+      <main>
+        {{ content | safe }}
+      </main>
+
+      <footer>
+        <p>
+          <small>Built with <a href="https://www.11ty.io/">Eleventy</a>.</small>
+        </p>
+        <p>
+          <small>
+            <a href="https://github.com/balazssagi/balazssagi.com/tree/master/{{ page.inputPath }}">Edit this page on GitHub</a>
+          </small>
+        </p>
+      </footer>
+    </div>
+
+  </body>
+</html>

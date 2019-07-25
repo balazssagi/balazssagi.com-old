@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+
+<p class="me">I’m a frontend developer interested in creating highly usable user interfaces. Check out my <a href="https://github.com/balazssagi">GitHub profile</a> or feel free to <a href="mailto:balazssagi@outlook.com">contact me via email</a>.</p>
+
+<h2 class="home-title">Notes</h2>
+{% for post in collections.posts | reverse %}
+  <h3 class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+    <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    <br/>
+    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+  </h3>
+{% endfor %}

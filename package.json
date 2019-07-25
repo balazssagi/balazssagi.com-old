@@ -1,0 +1,22 @@
+{
+  "name": "balazssagi.com",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "yarn run styles & eleventy",
+    "serve": "eleventy --serve",
+    "styles": "node-sass  -o ./css ./_includes/styles/index.scss",
+    "styles-watch": "node-sass  -o ./css ./_includes/styles/index.scss --watch",
+    "dev": "concurrently \"yarn run serve\" \"yarn run styles-watch\" "
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
+    "concurrently": "^4.1.1",
+    "luxon": "^1.12.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
+    "node-sass": "^4.12.0"
+  }
+}
