@@ -13,7 +13,7 @@ enum Color = {
 }
 ```
 
-To get a string literal type of keys you can use `keyof typeof`.
+To get a string literal type of the keys you can use `keyof typeof`.
 
 ``` typescript
 type ColorKeys = keyof typeof Color // => 'Primary' | 'Secondary'
