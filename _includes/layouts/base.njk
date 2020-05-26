@@ -10,9 +10,11 @@
     {% endif %}
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="{% if page.url == "/" %}home{% endif %}">
+      <div class="progress"></div>
     <div class="wrap">
       <header>
         <h1>
@@ -24,7 +26,7 @@
         </h1>
       </header>
 
-      <main>
+      <main  class="{% if page.url != "/" %}post{% endif %}">
         {{ content | safe }}
       </main>
 

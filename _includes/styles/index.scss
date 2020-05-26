@@ -7,16 +7,31 @@
   margin: 0;
 }
 
+.progress {
+  height: 5px;
+  background-color: $color-primary;
+  animation: progress 0.5s;
+  // animation-delay: 0.25s;
+  animation-fill-mode: both;
+}
+
+@keyframes progress {
+  0% {
+    transform: scaleX(0);
+    opacity: 0
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+
 body {
-  font-family: "Work sans", sans-serif;
+  font-family: "Literata", serif;
   color: $color-text;
-  background: $color-bg;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
-  @media (min-width: 60em) {
-    border: solid 1rem $color-base;
-  }
 }
 
 .wrap {
@@ -24,24 +39,82 @@ body {
   margin: 0 auto;
   padding: $spacing-5;
   margin: 0 auto;
-  @media (min-width: 60em) {
-    margin: 0 auto 0 15vw;
-  }
 }
 
 a {
   color: $color-primary;
+  transition: color 0.2s;
   &:hover, &:focus {
-    background: $color-base;
+    color: $color-primary-alt;
   }
-  &:focus-visible {
+  &:focus {
     outline: dashed 2px $color-primary;
   }
 }
 
-main {
+.post {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.728rem;
+  }
+  
+  h3 {
+    font-size: 1.44rem;
+    &:hover {
+      .direct-link {
+        opacity: 1;
+      }
+    }
+  }
   > * + * {
-    margin-top: $spacing-3;
+    margin-top: $spacing-4;
+  }
+  > h3 + * {
+    margin-top: $spacing-2;
+  }
+  .direct-link {
+    opacity: 0;
+    transition: opacity 0.2s;
+    &:focus {
+      opacity: 1;
+    }
+  }
+  .table-wrap {
+    overflow: auto;
+    table {
+      max-width: 100%;
+    }
+  }
+  img, pre, .table-wrap, iframe {
+    max-width: calc(100% + #{$spacing-5});
+    margin-left: -$spacing-5 / 2;
+    margin-right: -$spacing-5 / 2;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+    code {
+      border: none;
+      background: none;
+    }
+  }
+  thead {
+    text-align: left;
+    vertical-align: bottom;
+    border-bottom: 1px solid #cbcbcb;
+  }
+  th, td {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: .5em 1em;
   }
 }
 
@@ -49,7 +122,16 @@ header {
   margin-bottom: $spacing-4;
   margin-top: $spacing-5;
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+.home {
+  header {
+    text-align: center;
+    h1 {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -63,16 +145,19 @@ footer {
   padding-bottom: $spacing-5;
   border-bottom: solid 1px $color-border;
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .home-title {
   font-size: 1rem;
   margin-top: $spacing-5;
-  color: $color-text-light;
 }
 
 .postlist-item {
-  margin-top: $spacing-1;
+  margin-top: $spacing-3;
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .back-to-home {

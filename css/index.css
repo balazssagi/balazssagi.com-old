@@ -20,7 +20,8 @@ h1,
 h2,
 h3 {
   font-weight: 700;
-  line-height: 1.2; }
+  line-height: 1.2;
+  font-family: "Josefin Sans", sans-serif; }
 
 time {
   font-size: 0.8rem;
@@ -31,22 +32,24 @@ small {
   font-size: 0.8rem; }
 
 p {
-  line-height: 1.5; }
+  line-height: 1.6; }
 
 /**
- * GHColors theme by Avi Aryan (http://aviaryan.in)
- * Inspired by Github syntax coloring
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #393A34;
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-  direction: ltr;
+  color: #f8f8f2;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  line-height: 1.4em;
+  word-wrap: normal;
+  line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -55,120 +58,215 @@ pre[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none; }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background: #b3d4fc; }
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background: #b3d4fc; }
-
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
   overflow: auto;
-  border: 1px solid #dddddd;
-  background-color: white; }
+  border-radius: 0.3em; }
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #2b2b2b; }
 
 /* Inline code */
-:not(pre) > code {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  background: white;
-  border: 1px solid #dddddd; }
+  border-radius: 0.3em;
+  white-space: normal; }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999988;
-  font-style: italic; }
+  color: #d4d0ab; }
 
-.token.namespace {
-  opacity: .7; }
+.token.punctuation {
+  color: #fefefe; }
 
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #ffa07a; }
+
+.token.boolean,
+.token.number {
+  color: #00e0e0; }
+
+.token.selector,
+.token.attr-name,
 .token.string,
-.token.attr-value {
-  color: #e3116c; }
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #abe338; }
 
-.token.punctuation,
-.token.operator {
-  color: #393A34;
-  /* no highlight */ }
-
+.token.operator,
 .token.entity,
 .token.url,
-.token.symbol,
-.token.number,
-.token.boolean,
-.token.variable,
-.token.constant,
-.token.property,
-.token.regex,
-.token.inserted {
-  color: #36acaa; }
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #00e0e0; }
 
 .token.atrule,
-.token.keyword,
-.token.attr-name,
-.language-autohotkey .token.selector {
-  color: #00a4db; }
+.token.attr-value,
+.token.function {
+  color: #ffd700; }
 
-.token.function,
-.token.deleted,
-.language-autohotkey .token.tag {
-  color: #9a050f; }
+.token.keyword {
+  color: #00e0e0; }
 
-.token.tag,
-.token.selector,
-.language-autohotkey .token.keyword {
-  color: #00009f; }
+.token.regex,
+.token.important {
+  color: #ffd700; }
 
 .token.important,
-.token.function,
 .token.bold {
   font-weight: bold; }
 
 .token.italic {
   font-style: italic; }
 
+.token.entity {
+  cursor: help; }
+
+@media screen and (-ms-high-contrast: active) {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: windowText;
+    background: window; }
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: window; }
+  .token.important {
+    background: highlight;
+    color: window;
+    font-weight: normal; }
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.keyword,
+  .token.operator,
+  .token.selector {
+    font-weight: bold; }
+  .token.attr-value,
+  .token.comment,
+  .token.doctype,
+  .token.function,
+  .token.keyword,
+  .token.operator,
+  .token.property,
+  .token.string {
+    color: highlight; }
+  .token.attr-value,
+  .token.url {
+    font-weight: normal; } }
+
 * {
   margin: 0; }
 
+.progress {
+  height: 5px;
+  background-color: #00a14f;
+  animation: progress 0.5s;
+  animation-fill-mode: both; }
+
+@keyframes progress {
+  0% {
+    transform: scaleX(0);
+    opacity: 0; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
 body {
-  font-family: "Work sans", sans-serif;
+  font-family: "Literata", serif;
   color: #25295b;
-  background: #f9fcf8;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0; }
-  @media (min-width: 60em) {
-    body {
-      border: solid 1rem white; } }
 
 .wrap {
   max-width: 40em;
   margin: 0 auto;
   padding: 2.025em;
   margin: 0 auto; }
-  @media (min-width: 60em) {
-    .wrap {
-      margin: 0 auto 0 15vw; } }
 
 a {
-  color: #c14d00; }
+  color: #00a14f;
+  transition: color 0.2s; }
   a:hover, a:focus {
-    background: white; }
-  a:focus-visible {
-    outline: dashed 2px #c14d00; }
+    color: #006e36; }
+  a:focus {
+    outline: dashed 2px #00a14f; }
 
-main > * + * {
-  margin-top: 0.9em; }
+.post h1 {
+  font-size: 2rem; }
+
+.post h2 {
+  font-size: 1.728rem; }
+
+.post h3 {
+  font-size: 1.44rem; }
+  .post h3:hover .direct-link {
+    opacity: 1; }
+
+.post > * + * {
+  margin-top: 1.35em; }
+
+.post > h3 + * {
+  margin-top: 0.6em; }
+
+.post .direct-link {
+  opacity: 0;
+  transition: opacity 0.2s; }
+  .post .direct-link:focus {
+    opacity: 1; }
+
+.post .table-wrap {
+  overflow: auto; }
+  .post .table-wrap table {
+    max-width: 100%; }
+
+.post img, .post pre, .post .table-wrap, .post iframe {
+  max-width: calc(100% + 2.025em);
+  margin-left: -1.0125em;
+  margin-right: -1.0125em; }
+
+.post table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb; }
+  .post table code {
+    border: none;
+    background: none; }
+
+.post thead {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 1px solid #cbcbcb; }
+
+.post th, .post td {
+  border-left: 1px solid #cbcbcb;
+  border-width: 0 0 0 1px;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: .5em 1em; }
 
 header {
   margin-bottom: 1.35em;
   margin-top: 2.025em; }
   header h1 {
-    font-size: 1.2rem; }
+    font-size: 1.4rem; }
+
+.home header {
+  text-align: center; }
+  .home header h1 {
+    font-size: 2rem; }
 
 footer {
   margin-top: 2.025em;
@@ -178,15 +276,17 @@ footer {
 .me {
   padding-bottom: 2.025em;
   border-bottom: solid 1px #d3eee1;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  text-align: center; }
 
 .home-title {
   font-size: 1rem;
-  margin-top: 2.025em;
-  color: #5e5c75; }
+  margin-top: 2.025em; }
 
 .postlist-item {
-  margin-top: 0.4em; }
+  margin-top: 0.9em; }
+  .postlist-item:first-of-type {
+    margin-top: 0; }
 
 .back-to-home {
   margin-top: 2.025em; }

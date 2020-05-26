@@ -9,7 +9,8 @@ $spacing-5: $spacing-base * $ratio * $ratio * $ratio * $ratio;
 
 $color-base: hsl(0, 0%, 100%);
 $color-bg: hsl(108, 45%, 98%);
-$color-primary: rgb(193, 77, 0);
+$color-primary: rgb(0, 161, 79);
+$color-primary-alt: darken($color-primary, 10%);
 $color-border: hsl(152, 45%, 88%);
 $color-text: hsl(236, 42%, 25%);
 $color-text-light: hsl(245, 12%, 41%);
