@@ -8,7 +8,7 @@ layout: layouts/post.njk
 
 Imagine you're building the following UI flow:
 
-![A UI flow with four screens connected by arrows. On the first screen there's an email input field a submit button, and an arrow to the second screen. On the second screen there's a loading indicator. From the second screen there're two arrows: one goes to the third screen with a "Thank you" message, and the other goes to the fourth screen, with and email input field, a "Retry" button and a "Something went wrong" error message. There's an arrow going to the second screen from here.](/img/ui-flow.png)
+![A UI flow with four screens connected by arrows. On the first screen there's an email input field a submit button, and an arrow to the second screen. On the second screen there's a loading indicator. From the second screen there're two arrows: one goes to the third screen with a "Thank you" message, and the other goes to the fourth screen, with and email input field, a "Retry" button and a "Something went wrong" error message. There's an arrow going to the second screen from here.](/images/ui-flow.png)
 
 There are four different states. First, there’s a form with a submit button. When clicking on the button, a request is sent to the server, and the component displays a loading indicator. After that, it either shows a “Thank you” message or—in case of an error—shows the form again with a “Retry” button and an error message.
 
