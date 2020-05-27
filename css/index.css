@@ -169,17 +169,7 @@ pre[class*="language-"] {
 
 .progress {
   height: 5px;
-  background-color: #00a14f;
-  animation: progress 0.5s;
-  animation-fill-mode: both; }
-
-@keyframes progress {
-  0% {
-    transform: scaleX(0);
-    opacity: 0; }
-  100% {
-    transform: scale(1);
-    opacity: 1; } }
+  background-color: #00a14f; }
 
 body {
   font-family: "Literata", serif;
