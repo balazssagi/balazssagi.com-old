@@ -12,7 +12,7 @@ Imagine you're building the following UI flow:
 
 There are four different states. First, there’s a form with a submit button. When clicking on the button, a request is sent to the server, and the component displays a loading indicator. After that, it either shows a “Thank you” message or—in case of an error—shows the form again with a “Retry” button and an error message.
 
-One way of dealing with these various states is using multple boolean state variables. It's pretty common to see something like this in React codebases:
+One way of dealing with these various states is using multiple boolean state variables. It's pretty common to see something like this in React codebases:
 
 ```js
 function App() {
